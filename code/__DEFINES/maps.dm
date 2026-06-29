@@ -124,6 +124,8 @@ Always compile, always use that verb, and always make sure that it works for wha
 // string - type path of the z-level's baseturf (defaults to space)
 #define ZTRAIT_BASETURF "Baseturf"
 
+#define ZTRAIT_DAYCYCLE "Daycycle"
+
 ///boolean - does this z disable parallax?
 #define ZTRAIT_NOPARALLAX "No Parallax"
 

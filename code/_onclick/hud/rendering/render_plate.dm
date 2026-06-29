@@ -291,6 +291,7 @@
 		RegisterSignal(home, COMSIG_GROUP_HUD_CHANGED, PROC_REF(hud_changed))
 		hud_changed(null, null, home.our_hud)
 
+#define SUNLIGHTING_RENDER_TARGET "*SUNLIGHT_PLANE"
 /atom/movable/screen/plane_master/rendering_plate/lighting/show_to(mob/mymob)
 	. = ..()
 	if(!.)
@@ -305,6 +306,9 @@
 	SET_PLANE_EXPLICIT(backdrop, PLANE_TO_TRUE(backdrop.plane), src)
 	backdrop = mymob.overlay_fullscreen("lighting_backdrop_unlit_[home.key]#[offset]", /atom/movable/screen/fullscreen/lighting_backdrop/unlit)
 	SET_PLANE_EXPLICIT(backdrop, PLANE_TO_TRUE(backdrop.plane), src)
+	var/atom/movable/screen/fullscreen/sunlight = mymob.overlay_fullscreen("sunlight_backdrop", /atom/movable/screen/fullscreen/lighting_backdrop/sunlight)
+	sunlight.filters += filter(type="layer", render_source="[SUNLIGHTING_RENDER_TARGET] #[offset]")
+	SET_PLANE_EXPLICIT(sunlight, PLANE_TO_TRUE(sunlight.plane), src)
 
 	set_light_cutoff(mymob.lighting_cutoff, mymob.lighting_color_cutoffs)
 
@@ -312,6 +316,7 @@
 	. = ..()
 	oldmob.clear_fullscreen("lighting_backdrop_lit_[home.key]#[offset]")
 	oldmob.clear_fullscreen("lighting_backdrop_unlit_[home.key]#[offset]")
+	// oldmob.clear_fullscreen("sunlight_backdrop_[home.key]#[offset]")
 
 /atom/movable/screen/plane_master/rendering_plate/lighting/proc/hud_changed(datum/source, datum/hud/old_hud, datum/hud/new_hud)
 	SIGNAL_HANDLER

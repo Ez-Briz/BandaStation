@@ -157,7 +157,7 @@
 
 #ifdef LOWMEMORYMODE
 #ifndef ABSOLUTE_MINIMUM
-#define FORCE_MAP "runtimestation"
+#define FORCE_MAP "sunlightDebug"
 #else
 #define FORCE_MAP "runtimestation_minimal"
 #endif

@@ -75,7 +75,7 @@
 		process_next.lighting_corner_NW = src
 
 /datum/lighting_corner/proc/self_destruct_if_idle()
-	if (!LAZYLEN(affecting))
+	if (!LAZYLEN(affecting) && !LAZYLEN(globAffect))
 		qdel(src, force = TRUE)
 
 /datum/lighting_corner/proc/vis_update()
@@ -216,6 +216,7 @@
 /proc/display_corners()
 	var/list/corners = list()
 	var/max_lum = 0
+
 	for(var/datum/lighting_corner/corner) // I am so sorry
 		corners += corner
 		max_lum = max(max_lum, corner.largest_color_luminosity)
