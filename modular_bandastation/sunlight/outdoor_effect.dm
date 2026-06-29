@@ -229,7 +229,7 @@ SUBSYSTEM_DEF(outdoor_effects)
 /datum/controller/subsystem/outdoor_effects/proc/transition_sunlight_color(atom/movable/screen/fullscreen/lighting_backdrop/sunlight/SP)
 	/* transistion in an hour or time diff from now to our next step, whichever is smaller */
 	var/time = station_time() + skip_timer
-	var/time_to_animate = min(1 HOURS, daytimeDiff(time, next_step_datum.start))
+	var/time_to_animate = min(1 HOURS, daytimeDiff(time, next_step_datum?.start ? next_step_datum.start : 1))
 	var/blend_amount = (time - current_step_datum.start) / (next_step_datum.start - current_step_datum.start)
 	current_color = BlendRGB(current_step_datum.color, next_step_datum.color, blend_amount)
 
