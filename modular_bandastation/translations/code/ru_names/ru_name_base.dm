@@ -78,7 +78,7 @@ GLOBAL_LIST_EMPTY(ru_names)
 	. = name
 	if(declent == "gender")
 		. = gender
-	if(!length(ru_names) || ru_names["base"] != initial(name))
+	if(!length(ru_names) || !findtext(name, ru_names["base"]))
 		return .
 	return get_declented_value(ru_names, declent, .)
 

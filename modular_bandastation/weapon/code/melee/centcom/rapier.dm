@@ -39,6 +39,12 @@
 	attack_icon_state = "tanto_attack"
 	attack_speed = 4
 
+/obj/item/melee/sabre/centcom_tanto/proc/get_init()
+	return initial(name)
+
+/obj/item/melee/sabre/centcom_tanto/proc/get_runames()
+	return declent_ru(src)
+
 /obj/item/melee/sabre/centcom_tanto/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/two_handed, require_twohands = TRUE)

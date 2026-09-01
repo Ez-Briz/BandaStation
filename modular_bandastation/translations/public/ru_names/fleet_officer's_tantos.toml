@@ -6,3 +6,16 @@ accusative = "танто офицера флота"
 instrumental = "танто офицера флота"
 prepositional = "танто офицера флота"
 gender = "plural"
+
+["fleet officer's tantos (Wielded)"]
+nominative = "танто офицера флота (Двуручное)"
+genitive = "танто офицера флота (Двуручное)"
+dative = "танто офицера флота (Двуручное)"
+accusative = "танто офицера флота (Двуручное)"
+instrumental = "танто офицера флота (Двуручное)"
+prepositional = "танто офицера флота (Двуручное)"
+gender = "plural"
+
+["fleet officer's tantos (Wielded) - offhand"]
+nominative = "танто офицера флота (Двуручное) - вспомогательное"
+gender = "plural"

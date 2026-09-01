@@ -241,6 +241,6 @@
  * * force_real_name - If TRUE, will always return real_name and add (as face_name/id_name) if it doesn't match their appearance
  */
 /atom/proc/get_visible_name(add_id_name = TRUE, force_real_name = FALSE, declent = NOMINATIVE)
-	if(name != initial(name))
-		return name
+	// if(name != initial(name))
+	// 	return name
 	return declent_ru(declent)
